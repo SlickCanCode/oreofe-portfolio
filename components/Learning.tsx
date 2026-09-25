@@ -1,7 +1,15 @@
-import { ArrowUpRight } from "lucide-react"
 import Reveal from "./Reveal"
+import { FaLinkedin, FaGithub, FaXTwitter, FaTiktok } from "react-icons/fa6"
+
 
 export default function Learning() {
+  const socials = [
+  { label: "TikTok", href: "https://www.tiktok.com/@slickcancode", Icon: FaTiktok },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/oreofe-adelanwa-4aa04b368/", Icon: FaLinkedin },
+  { label: "GitHub", href: "https://github.com/SlickCanCode", Icon: FaGithub },
+  { label: "X", href: "https://x.com/oreofeadelanwa", Icon: FaXTwitter },
+]
+
   return (
     <section className="section-pad learning">
       <Reveal>
@@ -15,22 +23,22 @@ export default function Learning() {
           where I share the work.
         </p>
 
-        <div className="social-row">
-          <a href="#contact">
-            LinkedIn
-            <ArrowUpRight size={16} />
+      <div className="social-row">
+        {socials.map(({ label, href, Icon }) => (
+          <a
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={label}
+          >
+            <Icon size={16} aria-hidden="true" />
+            {label}
+            
           </a>
+        ))}
+      </div>
 
-          <a href="#contact">
-            GitHub
-            <ArrowUpRight size={16} />
-          </a>
-
-          <a href="#contact">
-            X
-            <ArrowUpRight size={16} />
-          </a>
-        </div>
       </Reveal>
     </section>
   )

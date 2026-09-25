@@ -8,40 +8,26 @@ export default function TechStack() {
     <section className="section-pad stack-section">
       <Reveal>
         <p className="eyebrow">Tools I use</p>
-        <h2>A stack that stays out of the way.</h2>
+        <h2>The stack behind what I build.</h2>
       </Reveal>
 
       <div className="stack-list">
-        {Object.entries(stack).map(
-          ([category, items], index) => (
-            <Reveal
-              key={category}
-              delay={index * 0.05}
-            >
-              <div className="stack-row">
-                <strong>{category}</strong>
+        {Object.entries(stack).map(([category, items], index) => (
+          <Reveal key={category} delay={index * 0.05}>
+            <div className="stack-row">
+              <strong>{category}</strong>
 
-                <div className="stack-items">
-                  {items.map(([item, mark]) => (
-                    <span
-                      className="chip tech-chip"
-                      key={item}
-                    >
-                      <span
-                        className="tech-mark"
-                        aria-hidden="true"
-                      >
-                        {mark}
-                      </span>
-
-                      {item}
-                    </span>
-                  ))}
-                </div>
+              <div className="stack-items">
+                {items.map(({ name, Icon }) => (
+                  <span className="chip tech-chip" key={name}>
+                    <Icon aria-hidden="true" />
+                    {name}
+                  </span>
+                ))}
               </div>
-            </Reveal>
-          )
-        )}
+            </div>
+          </Reveal>
+        ))}
       </div>
     </section>
   )

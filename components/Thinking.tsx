@@ -30,8 +30,7 @@ export default function Thinking() {
         <p className="eyebrow">How I think</p>
 
         <h2>
-          i don't just build websites and webApps, i create digital solutions for businesses that helps them make the most of
-          the digital opportunity in today's world.
+    I build digital solutions that help businesses and individuals thrive online.
         </h2>
       </Reveal>
 
